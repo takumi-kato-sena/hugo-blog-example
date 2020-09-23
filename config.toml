@@ -1,0 +1,4 @@
+baseURL = "https://takumi-kato-sena.github.io/hugo-blog-example/"
+languageCode = "ja-jp"
+title = "Hugo Blog Example"
+publishDir = "docs"

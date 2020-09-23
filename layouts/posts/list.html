@@ -1,0 +1,16 @@
+{{ define "main" }}
+  {{ range (.Paginator 2).Pages }}
+  <a href="{{ .Permalink }}">
+    <h2>{{ .Title }}</h2>
+    <p>{{ .Description }}</p>
+  </a>
+  {{ end }}
+  <div class="pagination">
+    {{ if .Paginator.HasPrev }}
+      <a href="{{ .Paginator.Prev.URL }}">前へ</a>
+    {{ end }}
+    {{ if .Paginator.HasNext }}
+      <a href="{{ .Paginator.Next.URL }}">次へ</a>
+    {{ end }}
+  </div>
+{{ end }}

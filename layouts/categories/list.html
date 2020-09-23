@@ -1,0 +1,16 @@
+{{ define "main" }}
+  {{ range $post := (.Paginate .Data.category 1).Pages }}
+    <a href="{{ $post.Permalink }}">
+      <h2>{{ $post.Title }}</h2>
+      <p>{{ $post.Description }}</p>
+    </a>
+  {{ end }}
+  <div class="pagination">
+    {{ if .Paginator.HasPrev }}
+      <a href="{{ .Paginator.Prev.URL }}">前へ</a>
+    {{ end }}
+    {{ if .Paginator.HasNext }}
+      <a href="{{ .Paginator.Next.URL }}">次へ</a>
+    {{ end }}
+  </div>
+{{ end }}

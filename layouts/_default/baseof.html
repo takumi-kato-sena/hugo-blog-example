@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ .Site.Title }} - {{ .Title }}</title>
+  {{ partial "head.html" }}
+</head>
+<body>
+  <nav class="flex">
+    <p>Example</p>
+    <div class="ml-10">
+      <a href="{{ ref . "/" }}" class="pl-5 pr-5">ホーム</a>
+      <a href="{{ ref . "/posts" }}" class="pl-5 pr-5">ブログ</a>
+      <a href="{{ ref . "/categories" }}" class="pl-5 pr-5">カテゴリ</a>
+    </div>
+  </nav>  
+  <main>
+    {{ block "main" . }}
+  </main>
+  {{ end }}
+</body>
+</html>

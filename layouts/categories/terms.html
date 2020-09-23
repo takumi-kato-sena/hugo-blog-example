@@ -1,0 +1,9 @@
+{{ define "main" }}
+  {{ range $category := .Site.Taxonomies.categories }}
+    <div>
+      <a href="{{ $category.Page.Permalink }}">
+        <p>{{ $category.Page.Title }}</p>
+      </a>
+    </div>
+  {{ end }}
+{{ end }}
